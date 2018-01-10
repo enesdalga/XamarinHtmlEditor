@@ -1,3 +1,8 @@
 Simple Xamarin Html Editor using CKEditor
+
+<p align="left">
 <img src="ios.gif" alt="iOS">
-<img src="ios.gif" alt="Android">
+</p>
+<p align="left">
+<img src="android.gif" alt="Android">
+</p>
