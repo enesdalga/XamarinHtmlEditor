@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{95BBC1DA-D09E-43DA-8E3D-B234C8502F8A}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>XamarinHtmlEditor.Droid</RootNamespace>
+    <AssemblyName>XamarinHtmlEditor.Droid</AssemblyName>
+    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidManagedSymbols>true</AndroidManagedSymbols>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="FormsViewGroup">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\MonoAndroid10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.Android">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\MonoAndroid10\Xamarin.Forms.Platform.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\MonoAndroid10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Clipboard.Abstractions">
+      <HintPath>..\packages\Xamarin.Plugins.Clipboard.2.0.0\lib\MonoAndroid10\Plugin.Clipboard.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Clipboard">
+      <HintPath>..\packages\Xamarin.Plugins.Clipboard.2.0.0\lib\MonoAndroid10\Plugin.Clipboard.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Annotations">
+      <HintPath>..\packages\Xamarin.Android.Support.Annotations.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Compat">
+      <HintPath>..\packages\Xamarin.Android.Support.Compat.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Core.UI">
+      <HintPath>..\packages\Xamarin.Android.Support.Core.UI.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.Core.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Core.Utils">
+      <HintPath>..\packages\Xamarin.Android.Support.Core.Utils.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.Core.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Media.Compat">
+      <HintPath>..\packages\Xamarin.Android.Support.Media.Compat.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.Media.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Fragment">
+      <HintPath>..\packages\Xamarin.Android.Support.Fragment.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.Fragment.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Transition">
+      <HintPath>..\packages\Xamarin.Android.Support.Transition.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.Transition.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\packages\Xamarin.Android.Support.v4.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.CardView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.CardView.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.v7.CardView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.Palette">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.Palette.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.v7.Palette.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.RecyclerView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.RecyclerView.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Vector.Drawable">
+      <HintPath>..\packages\Xamarin.Android.Support.Vector.Drawable.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.Vector.Drawable.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Animated.Vector.Drawable">
+      <HintPath>..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.Animated.Vector.Drawable.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.AppCompat">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Design">
+      <HintPath>..\packages\Xamarin.Android.Support.Design.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.MediaRouter">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.MediaRouter.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.v7.MediaRouter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.6.10\lib\netstandard2.0\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.HtmlLabel.Android">
+      <HintPath>..\packages\Xam.Plugin.HtmlLabel.1.0.4\lib\MonoAndroid10\Plugin.HtmlLabel.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.HtmlLabel">
+      <HintPath>..\packages\Xam.Plugin.HtmlLabel.1.0.4\lib\MonoAndroid10\Plugin.HtmlLabel.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XamarinHtmlEditor\XamarinHtmlEditor.csproj">
+      <Project>{90029D4C-AE44-434A-9E2E-6EB2AFBA033C}</Project>
+      <Name>XamarinHtmlEditor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebViewRender.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Tabbar.axml" />
+    <AndroidResource Include="Resources\layout\Toolbar.axml" />
+    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\drawable\icon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable\bold.png" />
+    <AndroidResource Include="Resources\drawable\center.png" />
+    <AndroidResource Include="Resources\drawable\copy.png" />
+    <AndroidResource Include="Resources\drawable\font_back.png" />
+    <AndroidResource Include="Resources\drawable\font_color.png" />
+    <AndroidResource Include="Resources\drawable\h1.png" />
+    <AndroidResource Include="Resources\drawable\highlight.png" />
+    <AndroidResource Include="Resources\drawable\indent_left.png" />
+    <AndroidResource Include="Resources\drawable\indent_right.png" />
+    <AndroidResource Include="Resources\drawable\italic.png" />
+    <AndroidResource Include="Resources\drawable\justify.png" />
+    <AndroidResource Include="Resources\drawable\left.png" />
+    <AndroidResource Include="Resources\drawable\link.png" />
+    <AndroidResource Include="Resources\drawable\list_bullet.png" />
+    <AndroidResource Include="Resources\drawable\list_number.png" />
+    <AndroidResource Include="Resources\drawable\paste.png" />
+    <AndroidResource Include="Resources\drawable\quote.png" />
+    <AndroidResource Include="Resources\drawable\right.png" />
+    <AndroidResource Include="Resources\drawable\strike.png" />
+    <AndroidResource Include="Resources\drawable\underline.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\bold.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\center.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\copy.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\font_back.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\font_color.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\h1.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\highlight.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\indent_left.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\indent_right.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\italic.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\justify.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\left.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\link.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\list_bullet.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\list_number.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\paste.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\quote.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\right.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\strike.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\underline.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\bold.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\center.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\copy.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\font_back.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\font_color.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\h1.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\highlight.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\indent_left.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\indent_right.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\italic.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\justify.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\left.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\link.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\list_bullet.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\list_number.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\paste.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\quote.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\right.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\strike.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\underline.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\bold.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\center.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\copy.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\font_back.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\font_color.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\h1.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\highlight.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\indent_left.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\indent_right.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\italic.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\justify.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\left.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\link.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\list_bullet.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\list_number.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\paste.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\quote.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\right.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\strike.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\underline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\web\index.html" />
+    <AndroidAsset Include="Assets\web\jquery.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\CHANGES.md" />
+    <AndroidAsset Include="Assets\web\ckeditor\LICENSE.md" />
+    <AndroidAsset Include="Assets\web\ckeditor\README.md" />
+    <AndroidAsset Include="Assets\web\ckeditor\build-config.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\ckeditor.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\config.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\contents.css" />
+    <AndroidAsset Include="Assets\web\ckeditor\styles.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\adapters\jquery.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\lang\ar.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\lang\en.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\lang\tr.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\icons.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\icons_hidpi.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\af.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\az.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\de-ch.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\en-gb.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\es-mx.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\eu.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\fo.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\id.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\ko.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\oc.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\si.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\tt.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\a11yhelp\dialogs\lang\zh.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\about\dialogs\about.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\plugin.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\icons\bgcolor.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\icons\textcolor.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\icons\hidpi\bgcolor.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\icons\hidpi\textcolor.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\af.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\ar.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\az.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\bg.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\bn.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\bs.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\ca.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\cs.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\cy.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\da.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\de-ch.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\de.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\el.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\en-au.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\en-ca.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\en-gb.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\en.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\eo.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\es-mx.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\es.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\et.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\eu.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\fa.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\fi.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\fo.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\fr-ca.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\fr.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\gl.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\gu.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\he.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\hi.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\hr.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\hu.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\id.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\is.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\it.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\ja.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\ka.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\km.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\ko.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\ku.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\lt.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\lv.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\mk.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\mn.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\ms.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\nb.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\nl.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\no.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\oc.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\pl.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\pt-br.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\pt.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\ro.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\ru.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\si.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\sk.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\sl.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\sq.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\sr-latn.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\sr.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\sv.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\th.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\tr.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\tt.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\ug.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\uk.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\vi.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\zh-cn.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colorbutton\lang\zh.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colordialog\dialogs\colordialog.css" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\colordialog\dialogs\colordialog.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\copyformatting\cursors\cursor-disabled.svg" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\copyformatting\cursors\cursor.svg" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\copyformatting\styles\copyformatting.css" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\div\dialogs\div.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\find\dialogs\find.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\flash\dialogs\flash.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\flash\images\placeholder.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\forms\dialogs\button.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\forms\dialogs\checkbox.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\forms\dialogs\form.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\forms\dialogs\hiddenfield.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\forms\dialogs\radio.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\forms\dialogs\select.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\forms\dialogs\textarea.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\forms\dialogs\textfield.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\forms\images\hiddenfield.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\iframe\dialogs\iframe.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\iframe\images\placeholder.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\image\dialogs\image.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\image\images\noimage.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\link\dialogs\anchor.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\link\dialogs\link.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\link\images\anchor.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\magicline\images\icon-rtl.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\magicline\images\icon.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\magicline\images\hidpi\icon-rtl.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\magicline\images\hidpi\icon.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\pagebreak\images\pagebreak.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\pastefromword\filter\default.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\preview\preview.html" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\scayt\CHANGELOG.md" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\scayt\LICENSE.md" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\scayt\README.md" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\scayt\dialogs\dialog.css" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\scayt\dialogs\options.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\scayt\skins\moono-lisa\scayt.css" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\showblocks\images\block_address.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\showblocks\images\block_blockquote.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\showblocks\images\block_div.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\showblocks\images\block_h1.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\showblocks\images\block_h2.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\showblocks\images\block_h3.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\showblocks\images\block_h4.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\showblocks\images\block_h5.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\showblocks\images\block_h6.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\showblocks\images\block_p.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\showblocks\images\block_pre.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\dialogs\smiley.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\angel_smile.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\angel_smile.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\angry_smile.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\angry_smile.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\broken_heart.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\broken_heart.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\confused_smile.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\confused_smile.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\cry_smile.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\cry_smile.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\devil_smile.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\devil_smile.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\embaressed_smile.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\embarrassed_smile.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\embarrassed_smile.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\envelope.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\envelope.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\heart.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\heart.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\kiss.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\kiss.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\lightbulb.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\lightbulb.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\omg_smile.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\omg_smile.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\regular_smile.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\regular_smile.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\sad_smile.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\sad_smile.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\shades_smile.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\shades_smile.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\teeth_smile.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\teeth_smile.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\thumbs_down.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\thumbs_down.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\thumbs_up.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\thumbs_up.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\tongue_smile.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\tongue_smile.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\tounge_smile.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\wink_smile.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\smiley\images\wink_smile.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\af.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\ar.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\az.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\bg.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\da.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\de-ch.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\en-au.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\en-ca.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\en-gb.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\es-mx.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\es.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\eu.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\gl.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\hu.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\id.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\ja.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\km.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\ko.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\lt.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\oc.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\ru.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\si.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\sl.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\th.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\tt.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\uk.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\vi.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\specialchar\dialogs\lang\zh.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\templates\dialogs\templates.css" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\templates\dialogs\templates.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\templates\templates\default.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\templates\templates\images\template1.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\templates\templates\images\template2.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\templates\templates\images\template3.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\wsc\LICENSE.md" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\wsc\README.md" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <AndroidAsset Include="Assets\web\ckeditor\plugins\wsc\skins\moono-lisa\wsc.css" />
+    <AndroidAsset Include="Assets\web\ckeditor\skins\moono-lisa\dialog.css" />
+    <AndroidAsset Include="Assets\web\ckeditor\skins\moono-lisa\dialog_ie.css" />
+    <AndroidAsset Include="Assets\web\ckeditor\skins\moono-lisa\dialog_ie8.css" />
+    <AndroidAsset Include="Assets\web\ckeditor\skins\moono-lisa\dialog_iequirks.css" />
+    <AndroidAsset Include="Assets\web\ckeditor\skins\moono-lisa\editor.css" />
+    <AndroidAsset Include="Assets\web\ckeditor\skins\moono-lisa\editor_gecko.css" />
+    <AndroidAsset Include="Assets\web\ckeditor\skins\moono-lisa\editor_ie.css" />
+    <AndroidAsset Include="Assets\web\ckeditor\skins\moono-lisa\editor_ie8.css" />
+    <AndroidAsset Include="Assets\web\ckeditor\skins\moono-lisa\editor_iequirks.css" />
+    <AndroidAsset Include="Assets\web\ckeditor\skins\moono-lisa\icons.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\skins\moono-lisa\icons_hidpi.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\skins\moono-lisa\readme.md" />
+    <AndroidAsset Include="Assets\web\ckeditor\skins\moono-lisa\images\arrow.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\skins\moono-lisa\images\close.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\skins\moono-lisa\images\lock-open.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\skins\moono-lisa\images\lock.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\skins\moono-lisa\images\refresh.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\skins\moono-lisa\images\spinner.gif" />
+    <AndroidAsset Include="Assets\web\ckeditor\skins\moono-lisa\images\hidpi\close.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\skins\moono-lisa\images\hidpi\lock-open.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\skins\moono-lisa\images\hidpi\lock.png" />
+    <AndroidAsset Include="Assets\web\ckeditor\skins\moono-lisa\images\hidpi\refresh.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Compat.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Compat.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Core.UI.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Core.UI.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Core.UI.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Core.UI.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Core.Utils.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Core.Utils.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Core.Utils.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Core.Utils.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Media.Compat.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Media.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Media.Compat.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Media.Compat.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Fragment.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Fragment.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Fragment.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Fragment.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Transition.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Transition.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Transition.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Transition.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v4.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v4.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v4.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v4.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v7.CardView.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v7.CardView.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.CardView.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v7.CardView.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v7.Palette.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v7.Palette.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.Palette.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v7.Palette.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v7.RecyclerView.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v7.RecyclerView.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.RecyclerView.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v7.RecyclerView.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Vector.Drawable.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Animated.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Animated.Vector.Drawable.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v7.AppCompat.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v7.AppCompat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.AppCompat.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v7.AppCompat.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Design.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Design.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Design.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Design.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v7.MediaRouter.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v7.MediaRouter.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.MediaRouter.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v7.MediaRouter.targets')" />
+</Project>

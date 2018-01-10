@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{EC0909B4-B54E-4DAF-908E-3E7EEF3A5C08}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>XamarinHtmlEditor.iOS</RootNamespace>
+    <AssemblyName>XamarinHtmlEditor.iOS</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <IOSDebuggerPort>33174</IOSDebuggerPort>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <IOSDebuggerPort>22106</IOSDebuggerPort>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.iOS">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.5.1\lib\netstandard1.6\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Clipboard.Abstractions">
+      <HintPath>..\packages\Xamarin.Plugins.Clipboard.2.0.0\lib\Xamarin.iOS10\Plugin.Clipboard.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Clipboard">
+      <HintPath>..\packages\Xamarin.Plugins.Clipboard.2.0.0\lib\Xamarin.iOS10\Plugin.Clipboard.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.HtmlLabel">
+      <HintPath>..\packages\Xam.Plugin.HtmlLabel.1.0.4\lib\Xamarin.iOS10\Plugin.HtmlLabel.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.HtmlLabel.iOS">
+      <HintPath>..\packages\Xam.Plugin.HtmlLabel.1.0.4\lib\Xamarin.iOS10\Plugin.HtmlLabel.iOS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XamarinHtmlEditor\XamarinHtmlEditor.csproj">
+      <Project>{90029D4C-AE44-434A-9E2E-6EB2AFBA033C}</Project>
+      <Name>XamarinHtmlEditor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Resources\webiOS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="WebViewRender.cs" />
+    <Compile Include="BaseUrl_iOS.cs" />
+    <Compile Include="KeyboardRender.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bold.png" />
+    <BundleResource Include="Resources\center.png" />
+    <BundleResource Include="Resources\copy.png" />
+    <BundleResource Include="Resources\font_back.png" />
+    <BundleResource Include="Resources\font_color.png" />
+    <BundleResource Include="Resources\h1.png" />
+    <BundleResource Include="Resources\highlight.png" />
+    <BundleResource Include="Resources\indent_left.png" />
+    <BundleResource Include="Resources\indent_right.png" />
+    <BundleResource Include="Resources\italic.png" />
+    <BundleResource Include="Resources\justify.png" />
+    <BundleResource Include="Resources\left.png" />
+    <BundleResource Include="Resources\link.png" />
+    <BundleResource Include="Resources\list_bullet.png" />
+    <BundleResource Include="Resources\list_number.png" />
+    <BundleResource Include="Resources\paste.png" />
+    <BundleResource Include="Resources\quote.png" />
+    <BundleResource Include="Resources\right.png" />
+    <BundleResource Include="Resources\strike.png" />
+    <BundleResource Include="Resources\underline.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\CHANGES.md" />
+    <BundleResource Include="Resources\webiOS\ckeditor\LICENSE.md" />
+    <BundleResource Include="Resources\webiOS\ckeditor\README.md" />
+    <BundleResource Include="Resources\webiOS\ckeditor\build-config.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\ckeditor.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\config.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\contents.css" />
+    <BundleResource Include="Resources\webiOS\ckeditor\styles.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\adapters\jquery.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\lang\ar.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\lang\en.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\lang\tr.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\icons.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\icons_hidpi.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\af.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\az.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\de-ch.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\en-gb.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\es-mx.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\eu.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\fo.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\id.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\ko.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\oc.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\si.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\tt.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\a11yhelp\dialogs\lang\zh.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\about\dialogs\about.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\plugin.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\icons\bgcolor.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\icons\textcolor.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\icons\hidpi\bgcolor.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\icons\hidpi\textcolor.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\af.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\ar.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\az.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\bg.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\bn.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\bs.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\ca.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\cs.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\cy.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\da.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\de-ch.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\de.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\el.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\en-au.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\en-ca.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\en-gb.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\en.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\eo.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\es-mx.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\es.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\et.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\eu.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\fa.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\fi.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\fo.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\fr-ca.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\fr.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\gl.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\gu.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\he.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\hi.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\hr.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\hu.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\id.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\is.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\it.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\ja.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\ka.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\km.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\ko.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\ku.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\lt.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\lv.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\mk.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\mn.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\ms.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\nb.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\nl.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\no.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\oc.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\pl.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\pt-br.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\pt.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\ro.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\ru.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\si.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\sk.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\sl.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\sq.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\sr-latn.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\sr.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\sv.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\th.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\tr.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\tt.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\ug.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\uk.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\vi.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\zh-cn.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colorbutton\lang\zh.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colordialog\dialogs\colordialog.css" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\colordialog\dialogs\colordialog.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\copyformatting\cursors\cursor-disabled.svg" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\copyformatting\cursors\cursor.svg" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\copyformatting\styles\copyformatting.css" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\div\dialogs\div.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\find\dialogs\find.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\flash\dialogs\flash.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\flash\images\placeholder.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\forms\dialogs\button.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\forms\dialogs\checkbox.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\forms\dialogs\form.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\forms\dialogs\hiddenfield.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\forms\dialogs\radio.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\forms\dialogs\select.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\forms\dialogs\textarea.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\forms\dialogs\textfield.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\forms\images\hiddenfield.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\iframe\dialogs\iframe.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\iframe\images\placeholder.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\image\dialogs\image.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\image\images\noimage.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\link\dialogs\anchor.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\link\dialogs\link.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\link\images\anchor.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\magicline\images\icon-rtl.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\magicline\images\icon.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\magicline\images\hidpi\icon-rtl.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\magicline\images\hidpi\icon.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\pagebreak\images\pagebreak.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\pastefromword\filter\default.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\preview\preview.html" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\scayt\CHANGELOG.md" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\scayt\LICENSE.md" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\scayt\README.md" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\scayt\dialogs\dialog.css" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\scayt\dialogs\options.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\scayt\skins\moono-lisa\scayt.css" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\showblocks\images\block_address.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\showblocks\images\block_blockquote.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\showblocks\images\block_div.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\showblocks\images\block_h1.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\showblocks\images\block_h2.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\showblocks\images\block_h3.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\showblocks\images\block_h4.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\showblocks\images\block_h5.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\showblocks\images\block_h6.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\showblocks\images\block_p.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\showblocks\images\block_pre.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\dialogs\smiley.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\angel_smile.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\angel_smile.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\angry_smile.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\angry_smile.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\broken_heart.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\broken_heart.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\confused_smile.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\confused_smile.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\cry_smile.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\cry_smile.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\devil_smile.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\devil_smile.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\embaressed_smile.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\embarrassed_smile.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\embarrassed_smile.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\envelope.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\envelope.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\heart.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\heart.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\kiss.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\kiss.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\lightbulb.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\lightbulb.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\omg_smile.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\omg_smile.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\regular_smile.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\regular_smile.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\sad_smile.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\sad_smile.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\shades_smile.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\shades_smile.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\teeth_smile.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\teeth_smile.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\thumbs_down.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\thumbs_down.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\thumbs_up.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\thumbs_up.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\tongue_smile.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\tongue_smile.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\tounge_smile.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\wink_smile.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\smiley\images\wink_smile.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\af.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\ar.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\az.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\bg.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\da.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\de-ch.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\en-au.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\en-ca.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\en-gb.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\es-mx.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\es.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\eu.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\gl.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\hu.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\id.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\ja.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\km.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\ko.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\lt.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\oc.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\ru.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\si.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\sl.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\th.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\tt.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\uk.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\vi.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\specialchar\dialogs\lang\zh.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\templates\dialogs\templates.css" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\templates\dialogs\templates.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\templates\templates\default.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\templates\templates\images\template1.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\templates\templates\images\template2.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\templates\templates\images\template3.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\wsc\LICENSE.md" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\wsc\README.md" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <BundleResource Include="Resources\webiOS\ckeditor\plugins\wsc\skins\moono-lisa\wsc.css" />
+    <BundleResource Include="Resources\webiOS\ckeditor\skins\moono-lisa\dialog.css" />
+    <BundleResource Include="Resources\webiOS\ckeditor\skins\moono-lisa\dialog_ie.css" />
+    <BundleResource Include="Resources\webiOS\ckeditor\skins\moono-lisa\dialog_ie8.css" />
+    <BundleResource Include="Resources\webiOS\ckeditor\skins\moono-lisa\dialog_iequirks.css" />
+    <BundleResource Include="Resources\webiOS\ckeditor\skins\moono-lisa\editor.css" />
+    <BundleResource Include="Resources\webiOS\ckeditor\skins\moono-lisa\editor_gecko.css" />
+    <BundleResource Include="Resources\webiOS\ckeditor\skins\moono-lisa\editor_ie.css" />
+    <BundleResource Include="Resources\webiOS\ckeditor\skins\moono-lisa\editor_ie8.css" />
+    <BundleResource Include="Resources\webiOS\ckeditor\skins\moono-lisa\editor_iequirks.css" />
+    <BundleResource Include="Resources\webiOS\ckeditor\skins\moono-lisa\icons.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\skins\moono-lisa\icons_hidpi.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\skins\moono-lisa\readme.md" />
+    <BundleResource Include="Resources\webiOS\ckeditor\skins\moono-lisa\images\arrow.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\skins\moono-lisa\images\close.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\skins\moono-lisa\images\lock-open.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\skins\moono-lisa\images\lock.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\skins\moono-lisa\images\refresh.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\skins\moono-lisa\images\spinner.gif" />
+    <BundleResource Include="Resources\webiOS\ckeditor\skins\moono-lisa\images\hidpi\close.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\skins\moono-lisa\images\hidpi\lock-open.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\skins\moono-lisa\images\hidpi\lock.png" />
+    <BundleResource Include="Resources\webiOS\ckeditor\skins\moono-lisa\images\hidpi\refresh.png" />
+    <BundleResource Include="Resources\webiOS\index.html" />
+    <BundleResource Include="Resources\webiOS\jquery.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.targets')" />
+</Project>

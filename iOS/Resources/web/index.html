@@ -1,0 +1,116 @@
+﻿<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="./ckeditor/ckeditor.js"></script>
+    <script src="./jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var editor = CKEDITOR.instances['Metin'];
+
+            if (editor) { editor.destroy(true); }
+            CKEDITOR.replace('Metin', {
+                enterMode: CKEDITOR.ENTER_BR,
+                htmlEncodeOutput: true,
+                height: '100%'
+            });
+
+            
+           
+        });
+
+        function getHtmlData() {
+            return CKEDITOR.instances['Metin'].getData();
+        }
+        function setHtmlData(str) {
+            return CKEDITOR.instances['Metin'].setData(str);
+        }
+        function komut(komut) {
+            switch (komut) {
+                case "bold":
+                    CKEDITOR.instances['Metin'].execCommand('bold');
+                    break;
+                case "italic":
+                    CKEDITOR.instances['Metin'].execCommand('italic');
+                    break;
+                case "underline":
+                    CKEDITOR.instances['Metin'].execCommand('underline');
+                    break;
+                case "justify":
+                    CKEDITOR.instances['Metin'].execCommand('justifyblock');
+                    break;
+                case "right":
+                    CKEDITOR.instances['Metin'].execCommand('justifyright');
+                    break;
+                case "left":
+                    CKEDITOR.instances['Metin'].execCommand('justifyleft');
+                    break;
+                case "strike":
+                    CKEDITOR.instances['Metin'].execCommand('strike');
+                    break;
+                case "center":
+                    CKEDITOR.instances['Metin'].execCommand('justifycenter');
+                    break;
+                case "list_bullet":
+                    CKEDITOR.instances['Metin'].execCommand('bulletedlist');
+                    break;
+                case "list_number":
+                    CKEDITOR.instances['Metin'].execCommand('numberedlist');
+                    break;
+                case "indent_right":
+                    CKEDITOR.instances['Metin'].execCommand('indent');
+                    break;
+                case "indent_left":
+                    CKEDITOR.instances['Metin'].execCommand('outdent');
+                    break;
+                case "quote":
+                    CKEDITOR.instances['Metin'].execCommand('blockquote');
+                    break;
+                case "copy":
+                    CKEDITOR.instances['Metin'].execCommand('copy');//koyalama düzeltilecek
+                    break;
+                case "paste":
+                    CKEDITOR.instances['Metin'].execCommand('paste');//yapışıtr düzeltilecek
+                    break;
+                case "link":
+                    CKEDITOR.instances['Metin'].execCommand('link');
+                    break;
+                case "h1":
+                    $('.cke_combo_button').on('click',function(){//format düzeltilecek
+                        alert("sda");
+                    });
+                    CKEDITOR.tools.callFunction(138,"h1");
+                    break;
+                /*case "font_back":
+                   CKEDITOR.instances['Metin'].getColorFromDialog(function(c) {//renkler ayarlacanck
+                       CKEDITOR.instances['Metin'].execCommand('forecolor', c);
+                   });
+                   break;
+               case "font_color":
+                   break;
+               case "highlight":
+                   CKEDITOR.instances['Metin'].execCommand('strike');
+                   break;*/
+            }
+        }
+
+    </script>
+    <style type="text/css">
+        .cke_top {
+            display: none !important
+        }
+
+        .cke_bottom {
+            display: none !important
+        }
+    </style>
+</head>
+<body style="margin:0px; ">
+    <div id="editor" style="height: 700px;">
+        <textarea id="Metin" name="Metin" class="form-control">
+        <p>BİSMİLLÂH her hayrın başıdır. Biz dahi başta ona başlarız. Bil, ey nefsim, şu mübarek kelime, İslâm nişanı olduğu gibi, bütün mevcudâtın lisan-ı hâl ile vird-i zebânıdır. Bismillâh ne büyük, tükenmez bir kuvvet, ne çok, bitmez bir bereket olduğunu anlamak istersen, şu temsîlî hikâyeciğe bak, dinle. Şöyle ki..      </p>
+        </textarea>
+    </div>
+</body>
+</html>
